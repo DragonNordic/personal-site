@@ -24,7 +24,7 @@ const App = () => {
         <div id="satir">
           <span className="yorum">
           </span>
-          <span className="cl">.Persona&nbsp;</span>
+          <span className="cl">.Person&nbsp;</span>
           <span className="beyaz">{"{"}</span>
           <br />
           <span className="secici">&nbsp;&nbsp;&nbsp;name</span>{" "}
@@ -166,7 +166,7 @@ const App = () => {
           <span className="beyaz">{"}"}</span>
           <br />
           <br />
-          <span className="cl">.Languages&nbsp;</span>
+          <span className="cl">.Language&nbsp;</span>
           <span className="beyaz">{"{"}</span>
           <br />
 
