@@ -8,6 +8,8 @@
 body {
     background: url(https://cdn.arstechnica.net/wp-content/uploads/2016/10/sierra.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #1B2225;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
