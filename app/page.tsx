@@ -16,7 +16,7 @@ const App = () => {
 
       <div id="orta">
         <div id="no">
-          {[...Array(52)].map((_, i) => (
+          {[...Array(54)].map((_, i) => (
             <span key={i + 1} className="number">{i + 1}</span>
           ))}
         </div>
@@ -52,17 +52,18 @@ const App = () => {
           <span className="secici">&nbsp;&nbsp;&nbsp;College</span>{" "}
           <span className="beyaz">:</span>
           <span className="ozellik">
-            &nbsp;"Khmelnitsky Polytechnical College"
+            &nbsp;&quot;Khmelnitsky Polytechnical College&quot;
           </span>
           <span className="beyaz">;</span>
+          <span className="yorum">&nbsp;&nbsp;&nbsp;/* Bachelor of Programming Engineering, Computer Software Engineering */</span>
           <br />
           <span className="secici">&nbsp;&nbsp;&nbsp;University</span>{" "}
           <span className="beyaz">:</span>
           <span className="ozellik text-[#D6FF00]">
-            &nbsp;"Khmelnitsky National University"
+            &nbsp;&quot;Khmelnitsky National University&quot;
           </span>
           <span className="beyaz">;</span>
-          <br />
+          <span className="yorum">&nbsp;&nbsp;&nbsp;/* Master of Computer Science, Computer Science */</span>
           <span className="beyaz">{"}"}</span>
           <br />
           <br />
@@ -174,12 +175,12 @@ const App = () => {
           <br />
           <span className="secici">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spoken-level</span>{" "}
           <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;"Native language"</span>
+          <span className="ozellik">&nbsp;&quot;Native language&quot;</span>
           <span className="beyaz">;</span>
           <br />
           <span className="secici">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Written-level</span>{" "}
           <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;"Presentation proficient"</span>
+          <span className="ozellik">&nbsp;&quot;Presentation proficient&quot;</span>
           <span className="beyaz">;</span>
           <br />
           <span className="beyaz">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"}"}</span>
@@ -191,12 +192,12 @@ const App = () => {
           <br />
           <span className="secici">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spoken-level</span>{" "}
           <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;"Upper Intermediate"</span>
+          <span className="ozellik">&nbsp;&quot;Upper Intermediate&quot;</span>
           <span className="beyaz">;</span>
           <br />
           <span className="secici">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Written-level</span>{" "}
           <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;"Intermediate+"</span>
+          <span className="ozellik">&nbsp;&quot;Intermediate+&quot;</span>
           <span className="beyaz">;</span>
           <br />
           <span className="beyaz">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"}"}</span>
@@ -212,7 +213,7 @@ const App = () => {
           <span className="secici">&nbsp;&nbsp;&nbsp;content</span>{" "}
           <span className="beyaz">:</span>
           <span className="ozellik text-[#D6FF00]">
-            &nbsp;"I am a self-motivated team player, goal-oriented,"
+            &nbsp;&quot;I am a self-motivated team player, goal-oriented,&quot;
           </span>
           <br />
           <span className="ozellik text-[#D6FF00]">
@@ -222,7 +223,7 @@ const App = () => {
           <br />
           <span className="ozellik text-[#D6FF00]">
             &nbsp;&nbsp;&nbsp;In spare time try to update skills on interesting
-            topics."
+            topics.&quot;
           </span>
           <span className="beyaz">;</span>
           <br />
