@@ -4,14 +4,14 @@ import ContactMe from "./contact-pop-up";
 
 const App = () => {
   return (
-    <div className="container mx-auto my-4 max-w-4xl opacity-90">
+    <div className="container mx-auto my-4 px-[10px] max-w-4xl opacity-90">
       <div className="bg-green-100 h-8 flex items-center rounded-t-lg px-4">
-        <h4 className="text-green-800 font-medium text-sm">PERSONAL CODE EDITOR</h4>
-        <div className="ml-auto flex space-x-1">
-          <div className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></div>
-          <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
+        <div className="mr-auto flex space-x-1">
           <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
+          <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
+          <div className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></div>
         </div>
+        <h4 className="text-green-800 font-medium text-sm mr-auto">PERSONAL CODE EDITOR</h4>
       </div>
 
       <div className="flex bg-gray-900 text-gray-300">
