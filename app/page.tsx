@@ -3,239 +3,224 @@ import "./css/page.css";
 
 const App = () => {
   return (
-    <div id="kapsa">
-      <div id="ust">
-        <h4 id="baslik">PERSONAL CODE EDITOR</h4>
-        <div id="islem">
-          <div id="y"></div>
-          <div id="s"></div>
-          <div id="k"></div>
+    <div className="container mx-auto my-4 max-w-4xl opacity-90">
+      <div className="bg-green-100 h-8 flex items-center rounded-t-lg px-4">
+        <h4 className="text-green-800 font-medium text-sm">PERSONAL CODE EDITOR</h4>
+        <div className="ml-auto flex space-x-1">
+          <div className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></div>
+          <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
+          <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
         </div>
-        <div className="temizle"></div>
       </div>
 
-      <div id="orta">
-        <div id="no">
-          {[...Array(54)].map((_, i) => (
-            <span key={i + 1} className="number">{i + 1}</span>
+      <div className="flex bg-gray-900 text-gray-300">
+        <div className="bg-gray-800 text-right py-2 px-2 text-[#98A8B5]">
+          {[...Array(50)].map((_, i) => (
+            <span key={i + 1} className="block">
+              {i + 1}
+            </span>
           ))}
         </div>
 
-        <div id="satir">
-          <span className="yorum">
-          </span>
-          <span className="cl">.Person&nbsp;</span>
-          <span className="beyaz">{"{"}</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;name</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;Rostislav Zavodianyi</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;year</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;21</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="beyaz">{"}"}</span>
-          <br />
-          <br />
-
-          <span className="cl">.Education&nbsp;</span>
-          <span className="beyaz">{"{"}</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;City</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;Khmelnitsky</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;College</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">
-            &nbsp;&quot;Khmelnitsky Polytechnical College&quot;
-          </span>
-          <span className="beyaz">;</span>
-          <span className="yorum">&nbsp;&nbsp;&nbsp;/* Bachelor of Programming Engineering, Computer Software Engineering */</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;University</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik text-[#D6FF00]">
-            &nbsp;&quot;Khmelnitsky National University&quot;
-          </span>
-          <span className="beyaz">;</span>
-          <span className="yorum">&nbsp;&nbsp;&nbsp;/* Master of Computer Science, Computer Science */</span>
-          <span className="beyaz">{"}"}</span>
-          <br />
+        <div className="flex-1 p-[8px]">
+          <div>
+            <span className="text-blue-400 font-medium">.Person</span>{" "}
+            <span className="text-[#98A8B5]">{"{"}</span>
+            <br />
+            <span className="text-green-400 ml-4">name</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">Rostislav Zavodianyi</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">year</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">21</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-[#98A8B5]">{"}"}</span>
+          </div>
           <br />
 
-          <span className="cl">.Languages&nbsp;</span>
-          <span className="beyaz">{"{"}</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;HTML5</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;CSS</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;JS (ES5, ES6+)</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="beyaz">{"}"}</span>
-          <br />
-          <br />
-
-          <span className="cl">.Technologies&nbsp;</span>
-          <span className="beyaz">{"{"}</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;Shopify</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;BigCommerce</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;React.js</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;4 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;jQuery</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;5 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;SASS</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;5 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;LESS</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;5 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;Stencil</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;Handlebars.js</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;Liquid</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;NPM</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;Gulp</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;6 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;Webpack</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;3 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;Tailwind</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;4 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;Bootstrap 3</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;3 years</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="beyaz">{"}"}</span>
-          <br />
-          <br />
-          <span className="cl">.Language&nbsp;</span>
-          <span className="beyaz">{"{"}</span>
+          <div>
+            <span className="text-blue-400 font-medium">.Education</span>{" "}
+            <span className="text-[#98A8B5]">{"{"}</span>
+            <br />
+            <span className="text-green-400 ml-4">City</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">Khmelnitsky</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">College</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">
+              &quot;Khmelnitsky Polytechnical College&quot;
+            </span>
+            <span className="text-[#98A8B5]">;</span>
+            <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;/* Bachelor of Programming Engineering,</span>
+            <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;Computer Software Engineering */</span>
+            <br />
+            <span className="text-green-400 ml-4">University</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">
+              &quot;Khmelnitsky National University&quot;
+            </span>
+            <span className="text-[#98A8B5]">;</span>
+            <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;/* Master of Computer Science,</span>
+            <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;Computer Science */</span>
+            <span className="text-[#98A8B5]">{"}"}</span>
+          </div>
           <br />
 
-          <span className="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&._Ukrainian&nbsp;</span>
-          <span className="beyaz">{"{"}</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spoken-level</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;&quot;Native language&quot;</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Written-level</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;&quot;Presentation proficient&quot;</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="beyaz">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"}"}</span>
-          <br />
-          <br />
-
-          <span className="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&._English&nbsp;</span>
-          <span className="beyaz">{"{"}</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spoken-level</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;&quot;Upper Intermediate&quot;</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Written-level</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik">&nbsp;&quot;Intermediate+&quot;</span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="beyaz">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"}"}</span>
+          <div>
+            <span className="text-blue-400 font-medium">.Languages</span>{" "}
+            <span className="text-[#98A8B5]">{"{"}</span>
+            <br />
+            <span className="text-green-400 ml-4">HTML5</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">CSS</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">JS (ES5, ES6+)</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-[#98A8B5]">{"}"}</span>
+          </div>
           <br />
 
-          <span className="beyaz">{"}"}</span>
-          <br />
+          <div>
+            <span className="text-blue-400 font-medium">.Technologies</span>{" "}
+            <span className="text-[#98A8B5]">{"{"}</span>
+            <br />
+            <span className="text-green-400 ml-4">Shopify</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">BigCommerce</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">React.js</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">4 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">jQuery</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">5 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">SASS</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">5 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">LESS</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">5 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">Stencil</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">Handlebars.js</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">Liquid</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">NPM</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">Gulp</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">6 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">Webpack</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">3 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">Tailwind</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">4 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-4">Bootstrap 3</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">3 years</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-[#98A8B5]">{"}"}</span>
+          </div>
           <br />
 
-          <span className="id">#some-info&nbsp;</span>
-          <span className="beyaz">{"{"}</span>
-          <br />
-          <span className="secici">&nbsp;&nbsp;&nbsp;content</span>{" "}
-          <span className="beyaz">:</span>
-          <span className="ozellik text-[#D6FF00]">
-            &nbsp;&quot;I am a self-motivated team player, goal-oriented,&quot;
-          </span>
-          <br />
-          <span className="ozellik text-[#D6FF00]">
-            &nbsp;&nbsp;&nbsp;responsible, and friendly. Quickly learn new
-            technologies.
-          </span>
-          <br />
-          <span className="ozellik text-[#D6FF00]">
-            &nbsp;&nbsp;&nbsp;In spare time try to update skills on interesting
-            topics.&quot;
-          </span>
-          <span className="beyaz">;</span>
-          <br />
-          <span className="beyaz">{"}"}</span>
+          <div>
+            <span className="text-blue-400 font-medium">.Language</span>{" "}
+            <span className="text-[#98A8B5]">{"{"}</span>
+            <br />
+            <span className="text-blue-400 ml-4">&._Ukrainian</span>{" "}
+            <span className="text-[#98A8B5]">{"{"}</span>
+            <br />
+            <span className="text-green-400 ml-8">Spoken-level</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">&quot;Native language&quot;</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-8">Written-level</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">&quot;Presentation proficient&quot;</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-[#98A8B5] ml-4">{"}"}</span>
+            <br />
+            <br />
+            <span className="text-blue-400 ml-4">&._English</span>{" "}
+            <span className="text-[#98A8B5]">{"{"}</span>
+            <br />
+            <span className="text-green-400 ml-8">Spoken-level</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">&quot;Upper Intermediate&quot;</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-green-400 ml-8">Written-level</span>
+            <span className="text-[#98A8B5]">:</span>{" "}
+            <span className="text-white">&quot;Intermediate+&quot;</span>
+            <span className="text-[#98A8B5]">;</span>
+            <br />
+            <span className="text-[#98A8B5] ml-4">{"}"}</span>
+            <br />
+            <span className="text-[#98A8B5]">{"}"}</span>
+          </div>
           <br />
         </div>
-
-        <div className="temizle"></div>
       </div>
 
-      <div id="alt">
-        &copy; <a href="https://codepen.io/codery">Rostislav Zavodianyi</a>
+      <div className="bg-green-100 h-8 flex items-center justify-center text-sm rounded-b-lg text-green-800">
+        &copy;{" "}
+        <a
+          href="#"
+          className="ml-1 border-b border-dotted text-green-800"
+        >
+          Rostislav Zavodianyi
+        </a>
       </div>
     </div>
   );
