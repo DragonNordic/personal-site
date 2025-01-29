@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/page.css";
+import ContactMe from "./contact-pop-up";
 
 const App = () => {
   return (
@@ -213,15 +214,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="bg-green-100 h-8 flex items-center justify-center text-sm rounded-b-lg text-green-800">
-        &copy;{" "}
-        <a
-          href="#"
-          className="ml-1 border-b border-dotted text-green-800"
-        >
-          Rostislav Zavodianyi
-        </a>
-      </div>
+      <ContactMe/>
     </div>
   );
 };
