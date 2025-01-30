@@ -52,15 +52,23 @@ const ContactPopup = () => {
       </div>
 
       {showSuccessPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center z-60">
-          <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4">
-            <button className="mr-auto" type="button" onClick={() => setShowSuccessPopup(false)}>
-              <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
-            </button>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center z-60"
+          onClick={() => setShowSuccessPopup(false)}
+        >
+          <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4 shadow-lg" onClick={(e) => e.stopPropagation()}>
+            <div className="mr-[100px] flex space-x-1">
+                <button type="button" onClick={() => setShowSuccessPopup(false)}>
+                    <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
+                </button>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></div>
+            </div>
+          
             <h4 className="text-[#282828] font-medium text-sm mr-auto">Success</h4>
           </div>
-          <div className="bg-gray-900 border-[1px] border-[#F3F3F1] w-96 p-6 rounded-b-lg shadow-lg relative">
-            <h2 className="text-lg text-[#F3F3F1] font-semibold mb-4 text-center">
+          <div className="bg-white w-96 p-6 rounded-b-lg shadow-lg relative" onClick={(e) => e.stopPropagation()}>
+            <h2 className="text-lg text-[#282828] font-semibold mb-4 text-center">
               Thank you! Your submission has been received.
             </h2>
           </div>
@@ -68,21 +76,28 @@ const ContactPopup = () => {
       )}
 
       {showPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center z-50">
-          <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4">
-            <button className="mr-auto" type="button" onClick={handlePopupToggle}>
-              <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
-            </button>
-            <h4 className="text-[#282828] font-medium text-sm mr-auto">Contact Form</h4>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center z-50"
+          onClick={handlePopupToggle}
+        >
+          <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4 shadow-lg" onClick={(e) => e.stopPropagation()}>
+            <div className="mr-auto flex space-x-1">
+              <button type="button" onClick={handlePopupToggle}>
+                <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
+              </button>
+              <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
+              <div className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></div>
+            </div>
+            <h4 className="text-[#282828] font-medium text-sm mr-[130px]">Contact Form</h4>
           </div>
-          <div className="bg-gray-900 border-[1px] border-[#F3F3F1] w-96 p-6 rounded-b-lg shadow-lg relative">
-            <h2 className="text-lg text-[#F3F3F1] font-semibold mb-4 text-center">
+          <div className="bg-white border-[1px] border-[#F3F3F1] w-96 p-6 rounded-b-lg shadow-lg relative" onClick={(e) => e.stopPropagation()}>
+            <h2 className="text-lg text-[#282828] font-semibold mb-4 text-center">
               Contact Me
             </h2>
             {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
             <form name="contact" onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-[#F3F3F1]">
+                <label htmlFor="name" className="block text-sm font-medium text-[#282828]">
                   Your Name
                 </label>
                 <input
@@ -96,7 +111,7 @@ const ContactPopup = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#F3F3F1]">
+                <label htmlFor="email" className="block text-sm font-medium text-[#282828]">
                   Your Email
                 </label>
                 <input
@@ -110,7 +125,7 @@ const ContactPopup = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-[#F3F3F1]">
+                <label htmlFor="message" className="block text-sm font-medium text-[#282828]">
                   Message
                 </label>
                 <textarea
@@ -118,16 +133,16 @@ const ContactPopup = () => {
                   name="message"
                   rows="4"
                   required
-                  className="mt-1 p-2 w-full border rounded-lg placeholder:text-gray-900 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="resize-none mt-1 p-2 w-full border rounded-lg placeholder:text-gray-900 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter your message"
                 ></textarea>
               </div>
 
               <div className="flex justify-between">
-                <button type="button" onClick={handlePopupToggle} className="text-[#F3F3F1] hover:text-green-300">
+                <button type="button" onClick={handlePopupToggle} className="outline-none px-3 py-1.5 w-[100px] text-center rounded-[40px] bg-white border-2 border-[#D20100] text-[#D20100] tracking-wide text-[12px] font-bold cursor-pointer transition-all duration-200 ease-in-out hover:bg-[#D62822] hover:border-[#D62822] hover:text-white active:tracking-wider">
                   Cancel
                 </button>
-                <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" disabled={loading}>
+                <button type="submit" className="outline-none px-3 py-1.5 w-[100px] text-center rounded-[40px] bg-white border-2 border-green-500 text-green-500 tracking-wide text-[12px] font-bold cursor-pointer transition-all duration-200 ease-in-out hover:bg-green-500 hover:text-white active:tracking-wider" disabled={loading}>
                   {loading ? "Submitting..." : "Submit"}
                 </button>
               </div>
