@@ -5,34 +5,39 @@ import React, { useState } from "react";
 const ContactPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handlePopupToggle = () => {
     setShowPopup(!showPopup);
   };
 
-  const handleSuccessPopupToggle = () => {
-    setShowSuccessPopup(true);
-    setShowPopup(false);
-  };
-
-  const encodeFormData = (data) => {
-    return new URLSearchParams(data).toString();
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError("");
 
     const formData = new FormData(e.target);
 
-    const response = await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encodeFormData({ "form-name": "contact", ...Object.fromEntries(formData) }),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (response.ok) {
-      handleSuccessPopupToggle();
+      const result = await response.json();
+
+      if (result.success) {
+        setShowSuccessPopup(true);
+        setShowPopup(false);
+      } else {
+        setError("Submission failed. Please try again.");
+      }
+    } catch (err) {
+      setError("Something went wrong.");
     }
+
+    setLoading(false);
   };
 
   return (
@@ -49,11 +54,9 @@ const ContactPopup = () => {
       {showSuccessPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center z-60">
           <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4">
-            <div className="mr-auto flex space-x-1">
-              <button type="button" onClick={() => setShowSuccessPopup(false)}>
-                <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
-              </button>
-            </div>
+            <button type="button" onClick={() => setShowSuccessPopup(false)}>
+              <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
+            </button>
             <h4 className="text-[#282828] font-medium text-sm mr-auto">Success</h4>
           </div>
           <div className="bg-gray-900 border-[1px] border-[#F3F3F1] w-96 p-6 rounded-b-lg shadow-lg relative">
@@ -67,20 +70,17 @@ const ContactPopup = () => {
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center z-50">
           <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4">
-            <div className="mr-auto flex space-x-1">
-              <button type="button" onClick={handlePopupToggle}>
-                <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
-              </button>
-            </div>
+            <button type="button" onClick={handlePopupToggle}>
+              <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
+            </button>
             <h4 className="text-[#282828] font-medium text-sm mr-auto">Contact Form</h4>
           </div>
           <div className="bg-gray-900 border-[1px] border-[#F3F3F1] w-96 p-6 rounded-b-lg shadow-lg relative">
             <h2 className="text-lg text-[#F3F3F1] font-semibold mb-4 text-center">
               Contact Me
             </h2>
-            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-4">
-              <input type="hidden" name="form-name" value="contact" />
-
+            {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+            <form name="contact" onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-[#F3F3F1]">
                   Your Name
@@ -122,12 +122,13 @@ const ContactPopup = () => {
                   placeholder="Enter your message"
                 ></textarea>
               </div>
+
               <div className="flex justify-between">
                 <button type="button" onClick={handlePopupToggle} className="text-[#F3F3F1] hover:text-green-300">
                   Cancel
                 </button>
-                <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
-                  Submit
+                <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" disabled={loading}>
+                  {loading ? "Submitting..." : "Submit"}
                 </button>
               </div>
             </form>
