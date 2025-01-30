@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-const Footer = () => {
+const ContactPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
@@ -10,25 +10,38 @@ const Footer = () => {
     setShowPopup(!showPopup);
   };
 
-  const handleSuccessPopupToggle = (e) => {
-    e.preventDefault();
+  const handleSuccessPopupToggle = () => {
     setShowSuccessPopup(true);
     setShowPopup(false);
+  };
+
+  const encodeFormData = (data) => {
+    return new URLSearchParams(data).toString();
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodeFormData({ "form-name": "contact", ...Object.fromEntries(formData) }),
+    });
+
+    if (response.ok) {
+      handleSuccessPopupToggle();
+    }
   };
 
   return (
     <div>
       <div className="bg-[#F3F3F1] h-8 px-4 flex items-center justify-between text-sm rounded-b-lg text-[#282828]">
-        <a
-          href="#"
-          className="border-b border-dotted text-[#282828] cursor-pointer"
-        >
+        <a href="#" className="border-b border-dotted text-[#282828] cursor-pointer">
           &copy; Rostislav Zavodianyi
         </a>
-        <button
-          onClick={handlePopupToggle}
-          className="border-b border-dotted text-[#282828] cursor-pointer"
-        >
+        <button onClick={handlePopupToggle} className="border-b border-dotted text-[#282828] cursor-pointer">
           Contact Me
         </button>
       </div>
@@ -37,11 +50,7 @@ const Footer = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center z-60">
           <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4">
             <div className="mr-auto flex space-x-1">
-              <button
-                type="button"
-                onClick={() => setShowSuccessPopup(false)}
-                className="text-green-100 hover:text-green-300"
-              >
+              <button type="button" onClick={() => setShowSuccessPopup(false)}>
                 <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
               </button>
             </div>
@@ -63,28 +72,17 @@ const Footer = () => {
                 <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
               </button>
             </div>
-            <h4 className="text-[#282828] font-medium text-sm mr-auto">
-              Contact Form
-            </h4>
+            <h4 className="text-[#282828] font-medium text-sm mr-auto">Contact Form</h4>
           </div>
           <div className="bg-gray-900 border-[1px] border-[#F3F3F1] w-96 p-6 rounded-b-lg shadow-lg relative">
             <h2 className="text-lg text-[#F3F3F1] font-semibold mb-4 text-center">
               Contact Me
             </h2>
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              onSubmit={handleSuccessPopupToggle}
-              className="space-y-4"
-            >
+            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-4">
               <input type="hidden" name="form-name" value="contact" />
 
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-[#F3F3F1]"
-                >
+                <label htmlFor="name" className="block text-sm font-medium text-[#F3F3F1]">
                   Your Name
                 </label>
                 <input
@@ -98,10 +96,7 @@ const Footer = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-[#F3F3F1]"
-                >
+                <label htmlFor="email" className="block text-sm font-medium text-[#F3F3F1]">
                   Your Email
                 </label>
                 <input
@@ -115,10 +110,7 @@ const Footer = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-[#F3F3F1]"
-                >
+                <label htmlFor="message" className="block text-sm font-medium text-[#F3F3F1]">
                   Message
                 </label>
                 <textarea
@@ -131,17 +123,10 @@ const Footer = () => {
                 ></textarea>
               </div>
               <div className="flex justify-between">
-                <button
-                  type="button"
-                  onClick={handlePopupToggle}
-                  className="text-[#F3F3F1] hover:text-green-300"
-                >
+                <button type="button" onClick={handlePopupToggle} className="text-[#F3F3F1] hover:text-green-300">
                   Cancel
                 </button>
-                <button
-                  type="submit"
-                  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
-                >
+                <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
                   Submit
                 </button>
               </div>
@@ -153,4 +138,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default ContactPopup;
