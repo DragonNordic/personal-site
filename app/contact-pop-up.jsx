@@ -54,7 +54,7 @@ const ContactPopup = () => {
       {showSuccessPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center z-60">
           <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4">
-            <button type="button" onClick={() => setShowSuccessPopup(false)}>
+            <button className="mr-auto" type="button" onClick={() => setShowSuccessPopup(false)}>
               <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
             </button>
             <h4 className="text-[#282828] font-medium text-sm mr-auto">Success</h4>
@@ -70,7 +70,7 @@ const ContactPopup = () => {
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center z-50">
           <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4">
-            <button type="button" onClick={handlePopupToggle}>
+            <button className="mr-auto" type="button" onClick={handlePopupToggle}>
               <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
             </button>
             <h4 className="text-[#282828] font-medium text-sm mr-auto">Contact Form</h4>
