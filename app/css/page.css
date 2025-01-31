@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-body {
+.image-background {
     background: url(https://cdn.arstechnica.net/wp-content/uploads/2016/10/sierra.jpg);
     background-size: cover;
     background-repeat: no-repeat;
