@@ -1,5 +1,7 @@
 "use client";
 
+import Lottie from "lottie-react";
+import successAnimation from "./Animation-1738336815274.json"
 import React, { useState, useEffect } from "react";
 
 const ContactPopup = () => {
@@ -16,7 +18,7 @@ const ContactPopup = () => {
     }
     
     return () => {
-      document.body.style.overflow = "auto"; // Розблокуємо при демонтажі
+      document.body.style.overflow = "auto";
     };
   }, [showPopup, showSuccessPopup]);
 
@@ -80,6 +82,7 @@ const ContactPopup = () => {
             <h4 className="text-[#282828] font-medium text-sm mr-auto">Success</h4>
           </div>
           <div className="bg-white w-96 p-6 rounded-b-lg shadow-lg relative" onClick={(e) => e.stopPropagation()}>
+            <Lottie animationData={successAnimation} loop={false} className="w-20 h-20 mb-4 mx-auto" />
             <h2 className="text-lg text-[#282828] font-semibold mb-4 text-center">
               Thank you! Your submission has been received.
             </h2>
