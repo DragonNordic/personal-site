@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 
 const elements = [
     { title: "Li", desc: "LinkedIn", color: "from-[#f3f9a6] to-[#cbc634]", textColor: "text-[#f3f9a6]", tooltip: "I'm only on here to reject invitations 😂" },
