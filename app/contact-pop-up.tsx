@@ -26,12 +26,12 @@ const ContactPopup = () => {
     setShowPopup(!showPopup);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.currentTarget);
 
     try {
       const response = await fetch("/api/contact", {
@@ -146,7 +146,7 @@ const ContactPopup = () => {
                 <textarea
                   id="message"
                   name="message"
-                  rows="4"
+                  rows={4}
                   required
                   className="resize-none mt-1 p-2 w-full border rounded-lg placeholder:text-gray-900 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter your message"
