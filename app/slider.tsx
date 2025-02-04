@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import "./css/slider.css";
+import Image from 'next/image';
 
 const slides = [
   {
@@ -162,7 +163,7 @@ const Slider = () => {
                         )}
 
                         <div className="emotions-slider-item__image">
-                          <img src={slide.image} alt={slide.title} />
+                          <Image src={slide.image} alt={slide.title} width={500} height={300} />
                         </div>
 
                         <div className="emotions-slider-item__content">
@@ -171,7 +172,7 @@ const Slider = () => {
                               <div className="emotions-slider-item__price">{slide.price}</div>
                               <div className="emotions-slider-item__author">
                                 <div className="emotions-slider-item__author-image">
-                                  <img src={slide.author.image} alt={slide.author.name} />
+                                  <Image src={slide.author.image} alt={slide.author.name} width={40} height={40} />
                                 </div>
                                 <div className="emotions-slider-item__author-name">
                                   {slide.author.name}
@@ -190,7 +191,11 @@ const Slider = () => {
                           </div>
 
                           <div className="emotions-slider-item__footer">
-                            <a className="emotions-slider-item__btn" href={slide.url} onClick = {()=>event!.preventDefault()}>
+                            <a
+                              className="emotions-slider-item__btn"
+                              href={slide.url}
+                              onClick={(e) => e.preventDefault()}
+                            >
                               <span className="emotions-slider-item__btn-text">View more</span>
                               <span className="emotions-slider-item__btn-icon"></span>
                             </a>

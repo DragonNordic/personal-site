@@ -48,6 +48,7 @@ const ContactPopup = () => {
         setError("Submission failed. Please try again.");
       }
     } catch (err) {
+      console.error(err);
       setError("Something went wrong.");
     }
 
