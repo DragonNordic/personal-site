@@ -2,6 +2,7 @@ import React from "react";
 import "./css/page.css";
 import ContactMe from "./contact-pop-up";
 import PeriodicTable from "./periodic-table";
+import Slider from "./slider";
 
 const App = () => {
   return (
@@ -222,6 +223,8 @@ const App = () => {
       </div>
 
       <PeriodicTable/>
+
+      <Slider/>
     </div>
   );
 };
