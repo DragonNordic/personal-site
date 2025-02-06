@@ -78,14 +78,14 @@ const ContactForm = () => {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4">
-                            <div className="mr-auto flex space-x-1">
+                            <div className="mr-auto flex space-x-1 absolute">
                                 <button onClick={() => setShowSuccessPopup(false)}>
                                     <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
                                 </button>
                                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                             </div>
-                            <h4 className="text-[#282828] font-medium text-sm mr-[150px]">Success</h4>
+                            <h4 className="text-[#282828] font-medium text-sm mx-auto">Success</h4>
                         </div>
 
                         <div className="p-6 text-center">
@@ -103,12 +103,12 @@ const ContactForm = () => {
             )}
             <div className="mt-4 w-full max-w-[500px]">
                 <div className="bg-[#F3F3F1] h-8 max-w-[500px] flex items-center rounded-t-lg px-4">
-                    <div className="mr-auto flex space-x-1">
+                    <div className="mr-auto flex space-x-1 absolute">
                         <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
                         <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
                         <div className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></div>
                     </div>
-                    <h4 className="text-[#282828] font-medium text-sm mr-[190px]">Contact Form</h4>
+                    <h4 className="text-[#282828] font-medium text-sm mx-auto">Contact Form</h4>
                 </div>
 
                 <div className="bg-[#ffffff] border-[1px] border-[#F3F3F1] w-full max-w-[500px] p-6 rounded-b-lg shadow-lg relative">
