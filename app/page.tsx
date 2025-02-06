@@ -1,10 +1,19 @@
+"use client";
+
 import React from "react";
 import "./css/page.css";
-import ContactMe from "./contact-pop-up";
 import PeriodicTable from "./periodic-table";
 import Slider from "./slider";
+import ContactForm from "./contact-form";
 
 const App = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact-form");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
       <div className="image-background min-h-[1200px] w-full">
@@ -217,14 +226,29 @@ const App = () => {
               <br />
             </div>
           </div>
-
-          <ContactMe/>
+          <div>
+            <div className="bg-[#F3F3F1] h-8 px-4 flex items-center justify-between text-sm rounded-b-lg text-[#282828]">
+              <a href="https://www.linkedin.com/in/rostyslav-zavodianyi-30927b223/" className="border-b border-dotted text-[#282828] cursor-pointer">
+                &copy; Rostislav Zavodianyi
+              </a>
+              <button
+                className="border-b border-dotted text-[#282828] cursor-pointer"
+                onClick={scrollToContact}
+              >
+                Contact Me
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
       <PeriodicTable/>
 
       <Slider/>
+
+      <div id="contact-form">
+        <ContactForm />
+      </div>
     </div>
   );
 };
