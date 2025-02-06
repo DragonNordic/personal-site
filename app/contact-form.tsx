@@ -55,8 +55,12 @@ const ContactForm = () => {
             } else {
                 setError("Submission failed. Please try again.");
             }
-        } catch (_) {
-            setError("Something went wrong.");
+        } catch (err) {
+            if (err instanceof Error) {
+                setError(`Something went wrong: ${err.message}`);
+            } else {
+                setError("Something went wrong.");
+            }
         }
 
         setLoading(false);
