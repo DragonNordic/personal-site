@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div>
-      <div className="image-background min-h-[1200px] w-full flex">
+      <div className="image-background min-h-[800px] w-full flex">
         <div className="container mx-auto my-auto py-[10px] px-[10px] max-w-4xl">
           <div className="bg-[#F3F3F1] h-8 flex items-center rounded-t-lg px-4">
             <div className="mr-auto flex space-x-1">
