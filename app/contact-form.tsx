@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import successAnimation from "./Animation-1738336815274.json";
 import "./css/contact-form.css";
 import React, { useState, useEffect } from "react";
+import { readv } from "fs";
 
 const ContactForm = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -153,16 +154,18 @@ const ContactForm = () => {
                             <label className="block text-sm font-medium text-[#282828]">Framework</label>
                             <div className="flex flex-wrap gap-[10px] mt-1">
                                 {["Shopify", "BigCommerce", "React.js"].map((fw) => (
-                                    <label key={fw} className="flex items-center">
+                                    <label key={fw} className="flex items-center cursor-pointer gap-2">
                                         <input
-                                            type="radio"
-                                            name="framework"
-                                            value={fw}
-                                            checked={formData.framework === fw}
-                                            onChange={handleInputChange}
-                                            className="form-radio"
+                                        type="radio"
+                                        name="framework"
+                                        value={fw}
+                                        checked={formData.framework === fw}
+                                        onChange={handleInputChange}
+                                        className="hidden peer"
                                         />
-                                        <span className="ml-1 text-black">{fw}</span>
+                                        <div className="w-4 h-4 border-2 border-gray-400 rounded-full flex items-center justify-center p-1 peer-checked:border-[#58ac30] peer-checked:bg-[#58ac30] transition">
+                                        </div>
+                                        <span className="text-black">{fw}</span>
                                     </label>
                                 ))}
                             </div>
@@ -179,14 +182,18 @@ const ContactForm = () => {
                                 onChange={handleInputChange}
                                 rows={6}
                                 required
-                                className="resize-y mt-1 p-2 w-full border rounded-lg placeholder:text-gray-900 text-gray-900"
+                                className="resize-y mt-1 p-2 w-full min-h-[162px] border rounded-lg placeholder:text-gray-900 text-gray-900"
                                 placeholder="Enter your message"
                             ></textarea>
                         </div>
 
                         <div className="flex justify-end !mt-4">
-                            <button type="submit" className="submit-button" disabled={loading}>
-                                <span>{loading ? "Submitting..." : "Submit"}</span>
+                            <button type="submit" className="submit-button flex items-center justify-center" disabled={loading}>
+                                {loading ? (
+                                    <div className="w-6 h-6 border-[3px] border-t-transparent border-white rounded-full animate-spin"></div>
+                                ) : (
+                                    <span>Submit</span>
+                                )}
                             </button>
                         </div>
                     </form>

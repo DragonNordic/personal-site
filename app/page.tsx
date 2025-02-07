@@ -127,7 +127,7 @@ const App = () => {
           </div>
           <div>
             <div className="bg-[#F3F3F1] h-8 px-4 flex items-center justify-between text-sm rounded-b-lg text-[#282828]">
-              <a href="https://www.linkedin.com/in/rostyslav-zavodianyi-30927b223/" className="border-b border-dotted text-[#282828] cursor-pointer">
+              <a href="https://www.linkedin.com/in/rostyslav-zavodianyi-30927b223/" target="_blank" className="border-b border-dotted text-[#282828] cursor-pointer">
                 &copy; Rostislav Zavodianyi
               </a>
               <button
