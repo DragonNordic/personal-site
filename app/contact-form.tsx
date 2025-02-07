@@ -4,7 +4,6 @@ import Lottie from "lottie-react";
 import successAnimation from "./Animation-1738336815274.json";
 import "./css/contact-form.css";
 import React, { useState, useEffect } from "react";
-import { readv } from "fs";
 
 const ContactForm = () => {
     const [showPopup, setShowPopup] = useState(false);
