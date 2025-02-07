@@ -16,8 +16,8 @@ const App = () => {
 
   return (
     <div>
-      <div className="image-background min-h-[1200px] w-full">
-        <div className="container mx-auto py-[10px] px-[10px] max-w-4xl">
+      <div className="image-background min-h-[1200px] w-full flex">
+        <div className="container mx-auto my-auto py-[10px] px-[10px] max-w-4xl">
           <div className="bg-[#F3F3F1] h-8 flex items-center rounded-t-lg px-4">
             <div className="mr-auto flex space-x-1">
               <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
@@ -29,7 +29,7 @@ const App = () => {
 
           <div className="flex bg-gray-900 text-gray-300 opacity-90">
             <div className="bg-gray-800 text-right py-2 px-2 text-[#98A8B5]">
-              {[...Array(50)].map((_, i) => (
+              {[...Array(27)].map((_, i) => (
                 <span key={i + 1} className="block">
                   {i + 1}
                 </span>
@@ -81,107 +81,6 @@ const App = () => {
                 <span className="text-[#98A8B5]">;</span>
                 <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;/* Master of Computer Science,</span>
                 <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;Computer Science */</span>
-                <span className="text-[#98A8B5]">{"}"}</span>
-              </div>
-              <br />
-
-              <div>
-                <span className="text-blue-400 font-medium">.Languages</span>{" "}
-                <span className="text-[#98A8B5]">{"{"}</span>
-                <br />
-                <span className="text-green-400 ml-4">HTML5</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">CSS</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">JS (ES5, ES6+)</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-[#98A8B5]">{"}"}</span>
-              </div>
-              <br />
-
-              <div>
-                <span className="text-blue-400 font-medium">.Technologies</span>{" "}
-                <span className="text-[#98A8B5]">{"{"}</span>
-                <br />
-                <span className="text-green-400 ml-4">Shopify</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">BigCommerce</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">React.js</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">4 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">jQuery</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">5 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">SASS</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">5 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">LESS</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">5 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">Stencil</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">Handlebars.js</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">Liquid</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">NPM</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">Gulp</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">6 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">Webpack</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">3 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">Tailwind</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">4 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
-                <span className="text-green-400 ml-4">Bootstrap 3</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">3 years</span>
-                <span className="text-[#98A8B5]">;</span>
-                <br />
                 <span className="text-[#98A8B5]">{"}"}</span>
               </div>
               <br />

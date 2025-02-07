@@ -133,6 +133,7 @@ const Slider = () => {
                 direction="horizontal"
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 loop={true}
+                loopAdditionalSlides={3}
                 navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
                 centeredSlides={true}
                 pagination= {{

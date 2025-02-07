@@ -101,8 +101,8 @@ const ContactForm = () => {
                     </div>
                 </div>
             )}
-            <div className="mt-4 w-full max-w-[500px]">
-                <div className="bg-[#F3F3F1] h-8 max-w-[500px] flex items-center rounded-t-lg px-4">
+            <div className="contact-form">
+                <div className="bg-[#F3F3F1] h-8 max-w-[500px] flex items-center px-4 rounded-t-[8px]">
                     <div className="mr-auto flex space-x-1 absolute">
                         <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
                         <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
@@ -111,12 +111,12 @@ const ContactForm = () => {
                     <h4 className="text-[#282828] font-medium text-sm mx-auto">Contact Form</h4>
                 </div>
 
-                <div className="bg-[#ffffff] border-[1px] border-[#F3F3F1] w-full max-w-[500px] p-6 rounded-b-lg shadow-lg relative">
+                <div className="bg-[#ffffff] border-[1px] border-[#F3F3F1] w-full max-w-[500px] p-6 rounded-b-[8px]">
                     <h2 className="text-lg text-[#282828] font-semibold mb-4 text-center">
                         Contact Me
                     </h2>
                     {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-                    <form name="contact" onSubmit={handleSubmit} className="space-y-4">
+                    <form name="contact" onSubmit={handleSubmit} className="space-y-4 h-full">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-[#282828]">
                                 Your Name
@@ -168,7 +168,7 @@ const ContactForm = () => {
                             </div>
                         </div>
 
-                        <div>
+                        <div className="">
                             <label htmlFor="message" className="block text-sm font-medium text-[#282828]">
                                 Message
                             </label>
@@ -177,48 +177,48 @@ const ContactForm = () => {
                                 name="message"
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                rows={4}
+                                rows={6}
                                 required
-                                className="resize-none mt-1 p-2 w-full border rounded-lg placeholder:text-gray-900 text-gray-900"
+                                className="resize-y mt-1 p-2 w-full border rounded-lg placeholder:text-gray-900 text-gray-900"
                                 placeholder="Enter your message"
                             ></textarea>
                         </div>
 
-              <div className="flex justify-end">
-                <button type="submit" className="outline-none px-3 py-1.5 w-[100px] text-center rounded-[40px] bg-[#ffffff] border-2 border-green-500 text-green-500 tracking-wide text-[12px] font-bold cursor-pointer transition-all duration-200 ease-in-out hover:bg-green-500 hover:text-white active:tracking-wider" disabled={loading}>
-                  {loading ? "Submitting..." : "Submit"}
-                </button>
-              </div>
-            </form>
-          </div>
-     </div>
-     <div className="debug mt-4">
-        <pre>
-            {JSON.stringify(
-                {
-                    name: {
-                        value: formData.name,
-                        valid: formData.name.trim().length > 0,
-                    },
-                    email: {
-                        value: formData.email,
-                        valid: formData.email.includes("@"),
-                    },
-                    framework: {
-                        value: formData.framework,
-                        selected: formData.framework !== "",
-                    },
-                    message: {
-                        value: formData.message,
-                    },
-                },
-                null,
-                2
-            )}
-        </pre>
-    </div>
-    </div>
-  );
+                        <div className="flex justify-end !mt-4">
+                            <button type="submit" className="submit-button" disabled={loading}>
+                                <span>{loading ? "Submitting..." : "Submit"}</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div className="debug">
+                <pre>
+                    {JSON.stringify(
+                        {
+                            name: {
+                                value: formData.name,
+                                valid: formData.name.trim().length > 0,
+                            },
+                            email: {
+                                value: formData.email,
+                                valid: formData.email.includes("@"),
+                            },
+                            framework: {
+                                value: formData.framework,
+                                selected: formData.framework !== "",
+                            },
+                            message: {
+                                value: formData.message,
+                            },
+                        },
+                        null,
+                        2
+                    )}
+                </pre>
+            </div>  
+        </div>
+    );
 };
 
 export default ContactForm;
