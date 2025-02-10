@@ -14,7 +14,7 @@ const ContactForm = () => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        framework: "Shopify",
+        framework: [] as string[],
         message: "",
     });
 
@@ -26,11 +26,22 @@ const ContactForm = () => {
     }, [showPopup, showSuccessPopup]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
+        const { name, value, type } = e.target;
+    
+        if (type === "checkbox") {
+            const checked = (e.target as HTMLInputElement).checked;
+            setFormData((prevData) => {
+                const newFrameworks = checked
+                    ? [...prevData.framework, value]
+                    : prevData.framework.filter((fw) => fw !== value);
+    
+                return { ...prevData, framework: newFrameworks };
+            });
+        } else {
+            setFormData({ ...formData, [name]: value });
+        }
     };
+    
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -51,7 +62,7 @@ const ContactForm = () => {
             if (result.success) {
                 setShowSuccessPopup(true);
                 setShowPopup(false);
-                setFormData({ name: "", email: "", message: "", framework: "ReactJS" });
+                setFormData({ name: "", email: "", message: "", framework: [] });
             } else {
                 setError("Submission failed. Please try again.");
             }
@@ -111,7 +122,7 @@ const ContactForm = () => {
                     <h4 className="text-[#282828] font-medium text-sm mx-auto">Contact Form</h4>
                 </div>
 
-                <div className="bg-[#ffffff] border-[1px] border-[#F3F3F1] w-full max-w-[500px] p-6 rounded-b-[8px]">
+                <div className="bg-[#ffffff] w-full max-w-[500px] p-6 rounded-b-[8px]">
                     <h2 className="text-lg text-[#282828] font-semibold mb-4 text-center">
                         Contact Me
                     </h2>
@@ -155,15 +166,14 @@ const ContactForm = () => {
                                 {["Shopify", "BigCommerce", "React.js"].map((fw) => (
                                     <label key={fw} className="flex items-center cursor-pointer gap-2">
                                         <input
-                                        type="radio"
-                                        name="framework"
-                                        value={fw}
-                                        checked={formData.framework === fw}
-                                        onChange={handleInputChange}
-                                        className="hidden peer"
+                                            type="checkbox"
+                                            name="framework"
+                                            value={fw}
+                                            checked={formData.framework.includes(fw)}
+                                            onChange={handleInputChange}
+                                            className="hidden peer"
                                         />
-                                        <div className="w-4 h-4 border-2 border-gray-400 rounded-full flex items-center justify-center p-1 peer-checked:border-[#58ac30] peer-checked:bg-[#58ac30] transition">
-                                        </div>
+                                        <div className="w-4 h-4 border-2 border-gray-400 rounded-[4px] flex items-center justify-center p-1 peer-checked:border-[#58ac30] peer-checked:bg-[#58ac30] transition"></div>
                                         <span className="text-black">{fw}</span>
                                     </label>
                                 ))}
@@ -181,12 +191,12 @@ const ContactForm = () => {
                                 onChange={handleInputChange}
                                 rows={6}
                                 required
-                                className="resize-y mt-1 p-2 w-full min-h-[162px] border rounded-lg placeholder:text-gray-900 text-gray-900"
+                                className="resize-none lg:resize-y mt-1 p-2 w-full min-h-[162px] border rounded-lg placeholder:text-gray-900 text-gray-900"
                                 placeholder="Enter your message"
                             ></textarea>
                         </div>
 
-                        <div className="flex justify-end !mt-4">
+                        <div className="flex justify-center lg:justify-end !mt-4">
                             <button type="submit" className="submit-button flex items-center justify-center" disabled={loading}>
                                 {loading ? (
                                     <div className="w-6 h-6 border-[3px] border-t-transparent border-white rounded-full animate-spin"></div>
@@ -212,7 +222,7 @@ const ContactForm = () => {
                             },
                             framework: {
                                 value: formData.framework,
-                                selected: formData.framework !== "",
+                                selected: formData.framework.length > 0,
                             },
                             message: {
                                 value: formData.message,

@@ -1,8 +1,10 @@
+import ThemeToggle from './theme-toggle';
+
 const Header = () => {
     return (
-        <header className="fixed z-50 flex w-[100vw] h-[80px] bg-slate-900">
+        <header className="fixed z-50 flex items-center pl-4 w-[100vw] h-[50px] bg-slate-900">
             <div>
-                {/* Заготовка */}
+                <ThemeToggle/>
             </div>
         </header>
     );

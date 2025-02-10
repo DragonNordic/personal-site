@@ -112,8 +112,7 @@ const Slider = () => {
         </p>
         <div className="wrapper base-template__wrapper">
           <div className="base-template__content">
-            <div className="emotions-slider">
-              <div className="emotions-slider__nav slider-nav">
+          <div className="emotions-slider__nav slider-nav">
                 <div ref={prevRef} className="slider-nav__item slider-nav__item_prev">
                   <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 26L2 14L14 2" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -125,7 +124,7 @@ const Slider = () => {
                   </svg>
                 </div>
               </div>
-
+            <div className="emotions-slider">
               <Swiper className="emotions-slider__slider swiper"
                 modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={1}

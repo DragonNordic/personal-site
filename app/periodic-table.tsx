@@ -83,7 +83,7 @@ const ElementWithTooltip: React.FC<Props> = ({ el }) => {
       className={`w-[100px] h-[100px] relative group bg-gradient-to-br ${el.color} p-1 cursor-default hover:scale-110 transition-transform`}
       onMouseEnter={handleMouseEnter}
     >
-      <div className="bg-[#202e38] p-4 w-full h-full transition-colors duration-300 group-hover:bg-transparent">
+      <div className="element-background p-4 w-full h-full transition-colors duration-300 group-hover:bg-transparent">
         <div className={`text-[32px] font-bold ${el.textColor} group-hover:text-black`}>{el.title}</div>
         <div className={`text-xs font-medium ${el.textColor} group-hover:text-black`}>{el.desc}</div>
       </div>
@@ -101,11 +101,11 @@ const ElementWithTooltip: React.FC<Props> = ({ el }) => {
 
 const PeriodicTable: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#202e38] flex flex-col items-center justify-center px-4">
-      <h1 className="text-4xl font-bold text-white text-center mt-8">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4">
+      <h1 className="text-4xl font-bold text-center mt-8">
         My Internet Periodic Table
       </h1>
-      <h5 className="text-xl font-light text-white text-center my-6">
+      <h5 className="text-xl font-light text-center my-6">
         How I waste my time on the Internet
       </h5>
 
@@ -119,7 +119,7 @@ const PeriodicTable: React.FC = () => {
         )}
       </div>
 
-      <div className="flex flex-col items-center mt-10 text-white">
+      <div className="flex flex-col items-center mt-10">
         <div className="flex flex-wrap justify-center gap-[25px] items-center text-sm">
           <div className="flex items-center gap-2">
             <span className="w-6 h-6 bg-gradient-to-br from-[#f3f9a6] to-[#cbc634]"></span>
