@@ -101,7 +101,7 @@ const ElementWithTooltip: React.FC<Props> = ({ el }) => {
 
 const PeriodicTable: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4">
+    <div className="periodic-table-background min-h-screen flex flex-col items-center justify-center px-4">
       <h1 className="text-4xl font-bold text-center mt-8">
         My Internet Periodic Table
       </h1>

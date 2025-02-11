@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400");
+@import url("./globals.css");
 
 .container-form {
     display: flex;
@@ -27,7 +28,6 @@
     border-radius: 8px;
     width: 100%;
     max-width: 500px;
-    background-color: #fff;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -200,6 +200,76 @@
 
 .animated-checkbox.is-unchecked .checkmark-check {
     animation: reverseCheck 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.1s both;
+}
+
+.form__checkbox {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.form__checkbox input:checked + svg {
+    border-color: var(--text-color);
+}
+
+.form__checkbox input:checked + svg polyline {
+    stroke-dashoffset: 0;
+}
+
+.form__checkbox input:checked + svg polyline, .form__checkbox:hover svg path {
+    stroke-dashoffset: unset;
+}
+
+.form__checkbox {
+    position: relative;
+    float: left;
+    min-width: 18px;
+    min-height: 18px;
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.form__checkbox svg {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+
+.form__checkbox svg path {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 71px;
+    stroke-dashoffset: 71px;
+    transition: all 0.3s ease;
+}
+
+.form__checkbox svg polyline {
+    fill: none;
+    stroke: var(--text-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 18px;
+    stroke-dashoffset: 18px;
+    transition: all 0.3s ease;
+}
+
+.form__checkbox span {
+    font-family: inherit;
+    pointer-events: none;
+    vertical-align: middle;
+}
+
+.form__checkbox-text {
+    text-align: left;
+    color: var(--text-color);
+    font-size: 14px;
 }
 
 @keyframes stroke {

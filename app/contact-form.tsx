@@ -85,18 +85,18 @@ const ContactForm = () => {
                     onClick={() => setShowSuccessPopup(false)}
                 >
                     <div
-                        className="bg-white w-96 rounded-lg shadow-lg relative"
+                        className="counter-background max-w-96 rounded-lg shadow-lg relative"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="bg-[#F3F3F1] h-8 w-96 flex items-center rounded-t-lg px-4">
+                        <div className="editor-background opacity-90 h-8 max-w-96 flex items-center rounded-t-lg px-4">
                             <div className="mr-auto flex space-x-1 absolute">
                                 <button onClick={() => setShowSuccessPopup(false)}>
                                     <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
                                 </button>
-                                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
+                                <div className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></div>
                             </div>
-                            <h4 className="text-[#282828] font-medium text-sm mx-auto">Success</h4>
+                            <h4 className="editor-text font-medium text-sm mx-auto">Success</h4>
                         </div>
 
                         <div className="p-6 text-center">
@@ -105,31 +105,31 @@ const ContactForm = () => {
                                 loop={false}
                                 className="w-20 h-20 mx-auto mb-4"
                             />
-                            <h2 className="text-lg font-semibold text-[#282828]">
+                            <h2 className="text-lg font-semibold editor-text">
                                 Thank you! Your submission has been received.
                             </h2>
                         </div>
                     </div>
                 </div>
             )}
-            <div className="contact-form">
-                <div className="bg-[#F3F3F1] h-8 max-w-[500px] flex items-center px-4 rounded-t-[8px]">
+            <div className="contact-form counter-background">
+                <div className="editor-background h-8 max-w-[500px] flex items-center px-4 rounded-t-[8px]">
                     <div className="mr-auto flex space-x-1 absolute">
                         <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
                         <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
                         <div className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></div>
                     </div>
-                    <h4 className="text-[#282828] font-medium text-sm mx-auto">Contact Form</h4>
+                    <h4 className="editor-text font-medium text-sm mx-auto">Contact Form</h4>
                 </div>
 
-                <div className="bg-[#ffffff] w-full max-w-[500px] p-6 rounded-b-[8px]">
-                    <h2 className="text-lg text-[#282828] font-semibold mb-4 text-center">
+                <div className="counter-background w-full max-w-[500px] p-6 rounded-b-[8px]">
+                    <h2 className="text-lg editor-text font-semibold mb-4 text-center">
                         Contact Me
                     </h2>
                     {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
                     <form name="contact" onSubmit={handleSubmit} className="space-y-4 h-full">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-[#282828]">
+                            <label htmlFor="name" className="block text-sm font-medium editor-text">
                                 Your Name
                             </label>
                             <input
@@ -145,7 +145,7 @@ const ContactForm = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-[#282828]">
+                            <label htmlFor="email" className="block text-sm font-medium editor-text">
                                 Your Email
                             </label>
                             <input
@@ -161,27 +161,37 @@ const ContactForm = () => {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-[#282828]">Framework</label>
+                            <label className="block text-sm font-medium editor-text">Framework</label>
                             <div className="flex flex-wrap gap-[10px] mt-1">
                                 {["Shopify", "BigCommerce", "React.js"].map((fw) => (
                                     <label key={fw} className="flex items-center cursor-pointer gap-2">
-                                        <input
-                                            type="checkbox"
-                                            name="framework"
-                                            value={fw}
-                                            checked={formData.framework.includes(fw)}
-                                            onChange={handleInputChange}
-                                            className="hidden peer"
-                                        />
-                                        <div className="w-4 h-4 border-2 border-gray-400 rounded-[4px] flex items-center justify-center p-1 peer-checked:border-[#58ac30] peer-checked:bg-[#58ac30] transition"></div>
-                                        <span className="text-black">{fw}</span>
+                                        <div className="form__checkbox">
+                                            <input
+                                                type="checkbox"
+                                                name="framework"
+                                                value={fw}
+                                                checked={formData.framework.includes(fw)}
+                                                onChange={handleInputChange}
+                                                className="hidden peer"
+                                            />
+                                            <svg className="checkbox" width="20px" height="20px" viewBox="0 0 20 20">
+                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.000000,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"/>
+                                                <polyline points="4 11 8 15 16 6"/> 
+                                            </svg>
+                                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.000000,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"/>
+                                                <polyline points="4 11 8 15 16 6"/>
+                                            </svg>
+                                        </div>
+
+                                        <span className="editor-text">{fw}</span>
                                     </label>
                                 ))}
                             </div>
                         </div>
 
                         <div className="">
-                            <label htmlFor="message" className="block text-sm font-medium text-[#282828]">
+                            <label htmlFor="message" className="block text-sm font-medium editor-text">
                                 Message
                             </label>
                             <textarea

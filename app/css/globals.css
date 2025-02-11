@@ -5,6 +5,13 @@
 :root {
   --background: #f1f1f1;
   --text-color: black;
+  --code-editor-style-color: #ea3a4e;
+  --code-editor-class-color: #573a1c;
+  --code-editor-background: #f1f1f1;
+  --code-editor-counter-color: #7B9DA0;
+  --code-editor-counter-background: #FCFFFF;
+  --code-editor-symbol-color: #4e9bfa;
+  --element-background: #5b5b5b;
   --form-background: #f1f1f1;
   --form-text-color: #111827;
   --slider-background: #c7c7c7;
@@ -14,6 +21,13 @@
 [data-theme='dark'] {
   --background: #202e38;
   --text-color: #ededed;
+  --code-editor-symbol-color: #98a8b5;
+  --code-editor-style-color: #4ade80;
+  --code-editor-class-color: #60a5fa;
+  --code-editor-background: #111827;
+  --code-editor-counter-color: #98a8b5;
+  --code-editor-counter-background: #1f2937;
+  --element-background: #202e38;
   --form-background: #ededed;
   --form-text-color: #111827;
   --slider-background: #1e1e1e;
@@ -27,6 +41,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.editor-background,
+.counter-background,
+.editor-text,
+.counter-color,
+.symbol-color,
+.class-color,
+.style-color,
 .emotions-slider-item__btn-icon::before,
 .emotions-slider-item__btn-icon::after,
 .emotions-slider-item,
@@ -35,8 +56,36 @@ body {
   transition: all 0.3s ease;
 }
 
+.editor-background {
+  background-color: var(--code-editor-background);
+}
+
+.counter-background {
+  background-color: var(--code-editor-counter-background);
+}
+
+.editor-text {
+  color: var(--text-color);
+}
+
+.counter-color {
+  color: var(--code-editor-counter-color);
+}
+
+.symbol-color {
+  color: var(--code-editor-symbol-color);
+}
+
+.class-color {
+  color: var(--code-editor-class-color);
+}
+
+.style-color {
+  color: var(--code-editor-style-color);
+}
+
 .element-background {
-  background-color: var(--background);
+  background-color: var(--element-background);
 }
 
 .slider-pagination__item {

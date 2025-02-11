@@ -18,17 +18,17 @@ const App = () => {
     <div>
       <div className="image-background min-h-[800px] lg:min-h-[850px] w-full flex">
         <div className="container mx-auto mb-auto mt-[80px] py-[10px] px-[10px] max-w-4xl">
-          <div className="bg-[#F3F3F1] h-8 flex items-center rounded-t-lg px-4">
+          <div className="counter-background h-8 flex items-center rounded-t-lg px-4">
             <div className="mr-auto flex space-x-1">
               <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></div>
               <div className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></div>
               <div className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></div>
             </div>
-            <h4 className="text-[#282828] font-medium text-sm mr-auto">PERSONAL CODE EDITOR</h4>
+            <h4 className="editor-text font-medium text-sm mr-auto">PERSONAL CODE EDITOR</h4>
           </div>
 
-          <div className="flex bg-gray-900 text-gray-300 opacity-90">
-            <div className="bg-gray-800 text-right py-2 px-2 text-[#98A8B5]">
+          <div className="flex editor-background text-gray-300 opacity-90">
+            <div className="counter-background text-right py-2 px-2 counter-color">
               {[...Array(27)].map((_, i) => (
                 <span key={i + 1} className="block">
                   {i + 1}
@@ -38,100 +38,100 @@ const App = () => {
 
             <div className="flex-1 p-[8px]">
               <div>
-                <span className="text-blue-400 font-medium">.Person</span>{" "}
-                <span className="text-[#98A8B5]">{"{"}</span>
+                <span className="class-color">.Person</span>{" "}
+                <span className="symbol-color">{"{"}</span>
                 <br />
-                <span className="text-green-400 ml-4">name</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">Rostislav Zavodianyi</span>
-                <span className="text-[#98A8B5]">;</span>
+                <span className="style-color ml-4">name</span>
+                <span className="symbol-color">:</span>{" "}
+                <span className="editor-text">Rostislav Zavodianyi</span>
+                <span className="symbol-color">;</span>
                 <br />
-                <span className="text-green-400 ml-4">year</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">21</span>
-                <span className="text-[#98A8B5]">;</span>
+                <span className="style-color ml-4">year</span>
+                <span className="symbol-color">:</span>{" "}
+                <span className="editor-text">21</span>
+                <span className="symbol-color">;</span>
                 <br />
-                <span className="text-[#98A8B5]">{"}"}</span>
+                <span className="symbol-color">{"}"}</span>
               </div>
               <br />
 
               <div>
-                <span className="text-blue-400 font-medium">.Education</span>{" "}
-                <span className="text-[#98A8B5]">{"{"}</span>
+                <span className="class-color">.Education</span>{" "}
+                <span className="symbol-color">{"{"}</span>
                 <br />
-                <span className="text-green-400 ml-4">City</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">Khmelnitsky</span>
-                <span className="text-[#98A8B5]">;</span>
+                <span className="style-color ml-4">City</span>
+                <span className="symbol-color">:</span>{" "}
+                <span className="editor-text">Khmelnitsky</span>
+                <span className="symbol-color">;</span>
                 <br />
-                <span className="text-green-400 ml-4">College</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">
+                <span className="style-color ml-4">College</span>
+                <span className="symbol-color">:</span>{" "}
+                <span className="editor-text">
                   &quot;Khmelnitsky Polytechnical College&quot;
                 </span>
-                <span className="text-[#98A8B5]">;</span>
-                <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;/* Bachelor of Programming Engineering,</span>
-                <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;Computer Software Engineering */</span>
+                <span className="symbol-color">;</span>
+                <span className="symbol-color block">&nbsp;&nbsp;&nbsp;/* Bachelor of Programming Engineering,</span>
+                <span className="symbol-color block">&nbsp;&nbsp;&nbsp;Computer Software Engineering */</span>
                 <br />
-                <span className="text-green-400 ml-4">University</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">
+                <span className="style-color ml-4">University</span>
+                <span className="symbol-color">:</span>{" "}
+                <span className="editor-text">
                   &quot;Khmelnitsky National University&quot;
                 </span>
-                <span className="text-[#98A8B5]">;</span>
-                <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;/* Master of Computer Science,</span>
-                <span className="text-[#98A8B5] font-normal block">&nbsp;&nbsp;&nbsp;Computer Science */</span>
-                <span className="text-[#98A8B5]">{"}"}</span>
+                <span className="symbol-color">;</span>
+                <span className="symbol-color block">&nbsp;&nbsp;&nbsp;/* Master of Computer Science,</span>
+                <span className="symbol-color block">&nbsp;&nbsp;&nbsp;Computer Science */</span>
+                <span className="symbol-color">{"}"}</span>
               </div>
               <br />
 
               <div>
-                <span className="text-blue-400 font-medium">.Language</span>{" "}
-                <span className="text-[#98A8B5]">{"{"}</span>
+                <span className="class-color">.Language</span>{" "}
+                <span className="symbol-color">{"{"}</span>
                 <br />
-                <span className="text-blue-400 ml-4">&._Ukrainian</span>{" "}
-                <span className="text-[#98A8B5]">{"{"}</span>
+                <span className="class-color ml-4">&._Ukrainian</span>{" "}
+                <span className="symbol-color">{"{"}</span>
                 <br />
-                <span className="text-green-400 ml-8">Spoken-level</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">&quot;Native language&quot;</span>
-                <span className="text-[#98A8B5]">;</span>
+                <span className="style-color ml-8">Spoken-level</span>
+                <span className="symbol-color">:</span>{" "}
+                <span className="editor-text">&quot;Native language&quot;</span>
+                <span className="symbol-color">;</span>
                 <br />
-                <span className="text-green-400 ml-8">Written-level</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">&quot;Presentation proficient&quot;</span>
-                <span className="text-[#98A8B5]">;</span>
+                <span className="style-color ml-8">Written-level</span>
+                <span className="symbol-color">:</span>{" "}
+                <span className="editor-text">&quot;Presentation proficient&quot;</span>
+                <span className="symbol-color">;</span>
                 <br />
-                <span className="text-[#98A8B5] ml-4">{"}"}</span>
+                <span className="symbol-color ml-4">{"}"}</span>
                 <br />
                 <br />
-                <span className="text-blue-400 ml-4">&._English</span>{" "}
-                <span className="text-[#98A8B5]">{"{"}</span>
+                <span className="class-color ml-4">&._English</span>{" "}
+                <span className="symbol-color">{"{"}</span>
                 <br />
-                <span className="text-green-400 ml-8">Spoken-level</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">&quot;Upper Intermediate&quot;</span>
-                <span className="text-[#98A8B5]">;</span>
+                <span className="style-color ml-8">Spoken-level</span>
+                <span className="symbol-color">:</span>{" "}
+                <span className="editor-text">&quot;Upper Intermediate&quot;</span>
+                <span className="symbol-color">;</span>
                 <br />
-                <span className="text-green-400 ml-8">Written-level</span>
-                <span className="text-[#98A8B5]">:</span>{" "}
-                <span className="text-white">&quot;Intermediate+&quot;</span>
-                <span className="text-[#98A8B5]">;</span>
+                <span className="style-color ml-8">Written-level</span>
+                <span className="symbol-color">:</span>{" "}
+                <span className="editor-text">&quot;Intermediate+&quot;</span>
+                <span className="symbol-color">;</span>
                 <br />
-                <span className="text-[#98A8B5] ml-4">{"}"}</span>
+                <span className="symbol-color ml-4">{"}"}</span>
                 <br />
-                <span className="text-[#98A8B5]">{"}"}</span>
+                <span className="symbol-color">{"}"}</span>
               </div>
               <br />
             </div>
           </div>
           <div>
-            <div className="bg-[#F3F3F1] h-8 px-4 flex items-center justify-between text-sm rounded-b-lg text-[#282828]">
-              <a href="https://www.linkedin.com/in/rostyslav-zavodianyi-30927b223/" target="_blank" className="border-b border-dotted text-[#282828] cursor-pointer">
+            <div className="editor-text counter-background h-8 px-4 flex items-center justify-between text-sm rounded-b-lg">
+              <a href="https://www.linkedin.com/in/rostyslav-zavodianyi-30927b223/" target="_blank" className="cursor-pointer">
                 &copy; Rostislav Zavodianyi
               </a>
               <button
-                className="border-b border-dotted text-[#282828] cursor-pointer"
+                className="cursor-pointer"
                 onClick={scrollToContact}
               >
                 Contact Me
