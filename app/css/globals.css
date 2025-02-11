@@ -12,8 +12,9 @@
   --code-editor-counter-background: #FCFFFF;
   --code-editor-symbol-color: #4e9bfa;
   --element-background: #5b5b5b;
-  --form-background: #f1f1f1;
-  --form-text-color: #111827;
+  --form-background: #202e38;
+  --form-top-background: #111827;
+  --form-text-color: #ededed;
   --slider-background: #c7c7c7;
   --slider-svg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 }
@@ -28,7 +29,8 @@
   --code-editor-counter-color: #98a8b5;
   --code-editor-counter-background: #1f2937;
   --element-background: #202e38;
-  --form-background: #ededed;
+  --form-background: #FCFFFF;
+  --form-top-background: #f1f1f1;
   --form-text-color: #111827;
   --slider-background: #1e1e1e;
   --slider-svg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
@@ -41,6 +43,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.form-top-background,
+.form-background,
+.form-text,
 .editor-background,
 .counter-background,
 .editor-text,
@@ -99,4 +104,16 @@ body {
 .emotions-slider-item__btn-icon::before,
 .emotions-slider-item__btn-icon::after {
 	background: var(--slider-svg) center center no-repeat;
+}
+
+.form-top-background {
+  background-color: var(--form-top-background);
+}
+
+.form-background {
+  background-color: var(--form-background);
+}
+
+.form-text {
+  color: var(--form-text-color);
 }
