@@ -1,19 +1,19 @@
 @import url("./globals.css");
 
 .spectacledcoder-toggle-container {
-	width: 110px;
-	height: 40px;
+	width: 90px;
+	height: 35px;
 	margin: auto;
 	display: flex;
 	border-radius: 20px;
-	padding: 2px;
+	padding: 1px;
 	box-shadow: 3.33px 3.33px 3.33px rgba(16, 16, 16, 0.667), 0px -2.67px 3.33px rgba(32, 32, 32, 0.453), -1.67px -1.67px 5px rgb(17, 17, 17) inset, 5px 5px 16.67px rgb(26, 26, 26) inset;
 	transition: background-color 0.5s, box-shadow 0.5s;
 }
 
 .spectacledcoder-toggle-border {
-	width: 130px;
-	height: 40px;
+	width: 90px;
+	height: 35px;
 	background-color: rgb(23, 23, 23);
 	border-radius: 70px;
 	margin: auto;
@@ -23,7 +23,7 @@
 
 .spectacledcoder-toggle {
 	margin: auto;
-	margin-left: 8px;
+	margin-left: 6px;
 	width: 30px;
 	height: 30px;
 	background-color: rgb(23, 23, 23);
@@ -47,13 +47,13 @@
 
 @keyframes roll {
 	100% {
-		transform: translateX(60px) rotate(360deg);
+		transform: translateX(45px) rotate(360deg);
 	}
 }
 
 @keyframes rollback { 
 	0% {
-		transform: translateX(60px) rotate(360deg);
+		transform: translateX(45px) rotate(360deg);
 	}
 	100% {
 		transform: translateX(0px) rotate(0deg);

@@ -26,7 +26,7 @@ const ThemeToggle: React.FC = () => {
 
       setTimeout(() => {
         toggleRef.current!.style.boxShadow =
-          "3.33px 3.33px 5px rgba(0, 0, 0, 0.312), -3.33px -3.33px 3.33px rgba(30, 30, 30, 0.696), 13.33px -1.67px 1px rgb(255, 255, 255) inset, -0.67px 1.67px 3.33px rgba(23, 23, 23, 0.986) inset";
+          "3.33px 3.33px 5px rgba(0, 0, 0, 0.312), -3.33px -3.33px 3.33px rgba(30, 30, 30, 0.696), 10.33px -1.67px 0px rgb(255, 255, 255) inset, -0.67px 1.67px 3.33px rgba(23, 23, 23, 0.986) inset";
         toggleRef.current!.style.border = "1px solid rgba(28, 28, 28, 0)";
         toggleRef.current!.style.backgroundColor = "rgb(23, 23, 23)";
       }, 250);
