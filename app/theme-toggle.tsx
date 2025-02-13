@@ -1,38 +1,69 @@
 "use client";
 
-import React from 'react';
-import { useTheme } from './theme-provider';
-import "./css/header.css"
+import React, { useEffect, useRef } from "react";
+import { useTheme } from "./theme-provider";
+import "./css/header.css";
 
 const ThemeToggle: React.FC = () => {
-  const { toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
+  const toggleRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const borderRef = useRef<HTMLDivElement>(null);
+  const disclaimerRef = useRef<HTMLDivElement>(null);
+
+  // Синхронізація з темою
+  useEffect(() => {
+    applyStyles(theme === "dark");
+  }, [theme]);
+
+  const applyStyles = (rolled: boolean) => {
+    if (rolled) {
+      toggleRef.current!.style.animation = "rollback 1.5s forwards";
+      containerRef.current!.style.boxShadow =
+        "3.33px 3.33px 3.33px rgba(16, 16, 16, 0.667), 0px -2.67px 3.33px rgba(32, 32, 32, 0.453), -1.67px -1.67px 5px rgb(17, 17, 17) inset, 5px 5px 16.67px rgb(26, 26, 26) inset";
+      borderRef.current!.style.backgroundColor = "rgb(23, 23, 23)";
+      disclaimerRef.current!.style.color = "white";
+
+      setTimeout(() => {
+        toggleRef.current!.style.boxShadow =
+          "3.33px 3.33px 5px rgba(0, 0, 0, 0.312), -3.33px -3.33px 3.33px rgba(30, 30, 30, 0.696), 13.33px -1.67px 1px rgb(255, 255, 255) inset, -0.67px 1.67px 3.33px rgba(23, 23, 23, 0.986) inset";
+        toggleRef.current!.style.border = "1px solid rgba(28, 28, 28, 0)";
+        toggleRef.current!.style.backgroundColor = "rgb(23, 23, 23)";
+      }, 250);
+    } else {
+      toggleRef.current!.style.animation = "roll 1.5s forwards";
+      containerRef.current!.style.boxShadow =
+        "3.33px 3.33px 3.33px rgb(242, 241, 241), -1.33px -2.33px 5px rgb(242, 241, 241), 0.67px -1.67px 3.33px rgb(255, 255, 255) inset, -3.33px -0.33px 1.67px yellow inset";
+      borderRef.current!.style.backgroundColor = "rgb(255, 255, 255)";
+      disclaimerRef.current!.style.color = "black";
+
+      setTimeout(() => {
+        toggleRef.current!.style.boxShadow =
+          "1.67px 1.67px 166.67px rgb(255, 255, 0) inset, 0.17px 0.17px 16.67px yellow";
+        toggleRef.current!.style.border = "1px solid rgb(255, 255, 255)";
+        toggleRef.current!.style.backgroundColor = "orange";
+      }, 250);
+    }
+  };
+
+  const handleClick = () => {
+    toggleTheme(); // Перемикаємо тему
+  };
 
   return (
     <div
-      className="switch p-2 text-[#ffffff]"
+      onClick={handleClick}
+      className="p-2 text-[#ffffff]"
       aria-label="Toggle Theme"
     >
-        <input className="switch__input" onClick={toggleTheme} type="checkbox" role="switch"/>
-        <svg className="switch__icon switch__icon--light pointer-events-none" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-            <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
-                <circle cx="6" cy="6" r="2" />
-                <g stroke-dasharray="1.5 1.5">
-                    <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
-                </g>
-            </g>
-        </svg>
-        <svg className="switch__icon switch__icon--dark pointer-events-none" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-            <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
-                <path d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"/>
-            </g>	
-        </svg>
+      <div ref={containerRef} className="spectacledcoder-toggle-container">
+        <div ref={borderRef} className="spectacledcoder-toggle-border">
+          <div ref={toggleRef} className="spectacledcoder-toggle" />
+        </div>
+      </div>
+      <div ref={disclaimerRef} className="hidden">
+        Disclaimer text here
+      </div>
     </div>
   );
 };

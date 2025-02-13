@@ -17,23 +17,23 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed z-50 flex justify-between items-center px-4 w-full h-[60px] bg-slate-900">
+    <header className="fixed z-50 flex justify-between items-center px-4 w-full h-[60px]">
       <button
         className="relative lg:hidden w-8 h-8 focus:outline-none"
         onClick={toggleMenu}
       >
         <span
-          className={`block absolute top-1/2 left-0 w-full h-0.5 bg-white transform transition-transform duration-300 ${
+          className={`burger-line block absolute top-1/2 left-0 w-full h-0.5 transform transition-transform duration-300 ${
             isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
           }`}
         ></span>
         <span
-          className={`block absolute top-1/2 left-0 w-full h-0.5 bg-white transition-opacity duration-300 ${
+          className={`burger-line block absolute top-1/2 left-0 w-full h-0.5 transition-opacity duration-300 ${
             isMenuOpen ? "opacity-0" : "opacity-100"
           }`}
         ></span>
         <span
-          className={`block absolute top-1/2 left-0 w-full h-0.5 bg-white transform transition-transform duration-300 ${
+          className={`burger-line block absolute top-1/2 left-0 w-full h-0.5 transform transition-transform duration-300 ${
             isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
           }`}
         ></span>
@@ -42,7 +42,7 @@ const Header = () => {
       <nav
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } lg:flex lg:items-center lg:space-x-4 lg:py-0 py-2 absolute lg:static top-full left-0 w-full lg:w-auto bg-slate-900 lg:bg-transparent`}
+        } burger-background lg:flex lg:items-center lg:space-x-4 lg:py-0 py-2 absolute lg:static top-full left-0 w-full lg:w-auto lg:bg-transparent`}
       >
         <span
           className="smooth-button"
