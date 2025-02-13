@@ -70,6 +70,16 @@
 	height: 20px;
 }
 
+.slider-nav__item_prev svg {
+    left: -1px;
+    position: relative;
+}
+
+.slider-nav__item_next svg {
+    right: -1px;
+    position: relative;
+}
+
 .slider-nav__item_prev {
 	position: relative;
 	right: 60px;
